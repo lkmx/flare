@@ -26,5 +26,9 @@
     display: grid;
     grid-template-rows: min-content 1fr min-content;
     min-height: 100%;
+
+    @if($header-position == fixed) {
+      grid-template-rows: 1fr min-content;
+    }
   }
 </style>
