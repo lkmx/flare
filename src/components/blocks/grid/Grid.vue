@@ -23,7 +23,10 @@ export default {
     mobileRowGap: String,
     mobileColumnGap: String,
     mobileAlignItems: String,
-    mobileJustifyItems: String
+    mobileJustifyItems: String,
+    columnWidth: String,
+    tabletColumnWidth: String,
+    mobileColumnWidth: String,
   },
   computed: {
     style() {
@@ -43,6 +46,9 @@ export default {
         '--mobile-row-gap': this.mobileRowGap,
         '--mobile-align-items': this.mobileAlignItems,
         '--mobile-justify-items': this.mobileJustifyItems,
+        '--column-width': this.columnWidth,
+        '--tablet-column-width': this.tabletColumnWidth,
+        '--mobile-column-width': this.mobileColumnWidth,
       }
     }
   }
@@ -55,21 +61,21 @@ export default {
   display: grid;
 
   @include respond-to("large and up") {
-    grid-template-columns: repeat(var(--columns, #{$grid-columns}), 1fr);
+    grid-template-columns: repeat(var(--columns, #{$grid-columns}), var(--column-width, #{$grid-column-width}));
     grid-row-gap: var(--row-gap, #{$grid-row-gap});
     grid-column-gap: var(--column-gap, #{$grid-column-gap});
     align-items: var(--align-items, #{$grid-align-items});
     justify-items: var(--justify-items, #{$grid-justify-items});
   }
   @include respond-to("medium") {
-    grid-template-columns: repeat(var(--tablet-columns, #{$grid-tablet-columns}), 1fr);
+    grid-template-columns: repeat(var(--tablet-columns, #{$grid-tablet-columns}), var(--tablet-column-width, #{$grid-tablet-column-width}));
     grid-row-gap: var(--tablet-row-gap, #{$grid-tablet-row-gap});
     grid-column-gap: var(--tablet-column-gap, #{$grid-tablet-column-gap});
     align-items: var(--tablet-align-items, #{$grid-tablet-align-items});
     justify-items: var(--tablet-justify-items, #{$grid-tablet-justify-items});
   }
   @include respond-to("small and down") {
-    grid-template-columns: repeat(var(--mobile-columns, #{$grid-mobile-columns}), 1fr);
+    grid-template-columns: repeat(var(--mobile-columns, #{$grid-mobile-columns}), var(--mobile-column-width, #{$grid-mobile-column-width}));
     grid-row-gap: var(--mobile-row-gap, #{$grid-mobile-row-gap});
     grid-column-gap: var(--mobile-column-gap, #{$grid-mobile-column-gap});
     align-items: var(--mobile-align-items, #{$grid-mobile-align-items});
