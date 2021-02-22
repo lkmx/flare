@@ -1,9 +1,9 @@
 <template>
   <header class="simple-header">
     <column :mode="mode">
-      <div class="simple-header__content">
+      <block class="simple-header__content">
         <slot></slot>
-      </div>
+      </block>
     </column>
   </header>
 </template>
@@ -48,7 +48,7 @@ export default {
     }
   }
 
-  &__content {
+  &__content .box {
     height: 100%;
 
     display: flex;
