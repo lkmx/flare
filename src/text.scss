@@ -16,8 +16,13 @@ body {
     background: var(--f-text-selection-color); /* Gecko Browsers */
 }
 
+strong {
+    font-weight: var(--f-text-strong-weight);
+}
 
-
+em {
+    font-style: var(--f-text-italic);
+}
 
 p {
     font-size: var(--f-paragraph-text-size);
