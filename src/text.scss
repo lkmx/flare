@@ -93,8 +93,9 @@ h1 {
     font-family: var(--f-h1-text-font);
     font-weight: var(--f-h1-text-weight);
     color: var(--f-h1-text-color);
-    line-height: var(--f-h1-line-height);
+    line-height: var(--f-h1-text-line-height);
     margin: var(--f-h1-text-margin);
+    letter-spacing: var(--f-h1-text-letter-spacing);
 }
 
 h2 {
@@ -102,8 +103,9 @@ h2 {
     font-family: var(--f-h2-text-font);
     font-weight: var(--f-h2-text-weight);
     color: var(--f-h2-text-color);
-    line-height: var(--f-h2-line-height);
+    line-height: var(--f-h2-text-line-height);
     margin: var(--f-h2-text-margin);
+    letter-spacing: var(--f-h2-text-letter-spacing);
 }
 
 h3 {
@@ -111,8 +113,9 @@ h3 {
     font-family: var(--f-h3-text-font);
     font-weight: var(--f-h3-text-weight);
     color: var(--f-h3-text-color);
-    line-height: var(--f-h3-line-height);
+    line-height: var(--f-h3-text-line-height);
     margin: var(--f-h3-text-margin);
+    letter-spacing: var(--f-h3-text-letter-spacing);
 }
 
 h4 {
@@ -120,8 +123,9 @@ h4 {
     font-family: var(--f-h4-text-font);
     font-weight: var(--f-h4-text-weight);
     color: var(--f-h4-text-color);
-    line-height: var(--f-h4-line-height);
+    line-height: var(--f-h4-text-line-height);
     margin: var(--f-h4-text-margin);
+    letter-spacing: var(--f-h4-text-letter-spacing);
 }
 
 h5 {
@@ -129,8 +133,9 @@ h5 {
     font-family: var(--f-h5-text-font);
     font-weight: var(--f-h5-text-weight);
     color: var(--f-h5-text-color);
-    line-height: var(--f-h5-line-height);
+    line-height: var(--f-h5-text-line-height);
     margin: var(--f-h5-text-margin);
+    letter-spacing: var(--f-h5-text-letter-spacing);
 }
 
 h6 {
@@ -138,6 +143,7 @@ h6 {
     font-family: var(--f-h6-text-font);
     font-weight: var(--f-h6-text-weight);
     color: var(--f-h6-text-color);
-    line-height: var(--f-h6-line-height);
+    line-height: var(--f-h6-text-line-height);
     margin: var(--f-h6-text-margin);
+    letter-spacing: var(--f-h6-text-letter-spacing);
 }
