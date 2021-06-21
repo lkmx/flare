@@ -66,15 +66,35 @@ export default {
         }
       }
     },
+    isHeaderFixed() {
+      const headerEl = document.querySelector('.simple-header');
+      const mainEl = document.querySelector('main.--flare');
+      let headerHeightEl = headerEl.offsetHeight;      
+
+      // set css variable
+      document.documentElement.style.setProperty(`--header-current-height`, `${headerHeightEl}px`); 
+      
+      // evaluate if header is fixed
+      if (headerEl.classList.contains('--flare-header-fixed')) {
+        mainEl.classList.add('--flare-header-is-fixed');
+      }
+    }
   },
   updated() {
     this.process();
   },
   mounted() {
     this.process();
+    this.isHeaderFixed();
   },
   created() {
     this.process();
   }
 };
 </script>
+
+<style lang="scss">
+.--flare-header-is-fixed {
+  margin-top: var(--header-current-height);
+}
+</style>

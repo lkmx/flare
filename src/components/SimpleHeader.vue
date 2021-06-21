@@ -1,5 +1,5 @@
 <template>
-  <header class="simple-header">
+  <header class="simple-header" :class="fixed ? '--flare-header-fixed' : ''">
     <column :mode="mode">
       <block class="simple-header__content">
         <slot></slot>
@@ -9,52 +9,68 @@
 </template>
 
 <script>
-import Columns from "../core/Columns.vue";
-export default {
-  components: { Columns },
-  props: {
-    mode: {
-      type: String,
-      required: false,
+  import Columns from "../core/Columns.vue";
+  export default {
+    components: {
+      Columns
     },
-  },
-};
+    props: {
+      mode: {
+        type: String,
+        required: false,
+      },
+      fixed: {
+        type: Boolean,
+        require: false,
+      }
+    },
+  };
+
 </script>
 
 <style lang="scss">
-.simple-header {
-  min-height: var(--f-gutter-xl);
-  height: var(--f-header-height);
+  .simple-header {
+    min-height: var(--f-gutter-xl);
+    height: var(--f-header-height);
 
-  color: var(--f-header-text-color);
-  background-color: var(--f-header-background-color);
-  a {
     color: var(--f-header-text-color);
-  }
+    background-color: var(--f-header-background-color);
 
-  nav:not(.actions) {
     a {
-      padding: 0 var(--f-gutter);
+      color: var(--f-header-text-color);
     }
-  }
-  
-  .--flare {
-    &-columns {
-      height: 100%;
+
+    nav:not(.actions) {
+      a {
+        padding: 0 var(--f-gutter);
+      }
     }
-    &-block {
+
+    .--flare {
+      &-columns {
+        height: 100%;
+      }
+
+      &-block {
+        height: 100%;
+        --f-block-content-padding: 0;
+      }
+    }
+
+    &__content .box {
       height: 100%;
-      --f-block-content-padding: 0;
+
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &.--flare-header-fixed {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 10;
     }
   }
 
-  &__content .box {
-    height: 100%;
-
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
 </style>
